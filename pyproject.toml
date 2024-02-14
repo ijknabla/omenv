@@ -5,7 +5,7 @@ description = ""
 authors = ["ijknabla <ijknabla@gmail.com>"]
 readme = "README.md"
 packages = [
-    { include = "build.py" },
+    { include = "ombuild.py" },
 ]
 
 [tool.poetry.dependencies]
