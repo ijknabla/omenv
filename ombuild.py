@@ -1,6 +1,5 @@
 import argparse
 import os
-import shutil
 from asyncio import create_subprocess_exec, run
 from pathlib import Path
 
