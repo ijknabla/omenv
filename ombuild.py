@@ -23,7 +23,12 @@ async def main() -> None:
     prefix: str = args.prefix
     tags: Sequence[Tag] = args.tag
 
-    await gather(*(build(tag=tag, prefix=Path(prefix, tag)) for tag in tags))
+    result = await gather(
+        *(build(tag=tag, prefix=Path(prefix, tag)) for tag in tags), return_exceptions=True
+    )
+    for exception in result:
+        if isinstance(exception, BaseException):
+            raise exception
 
 
 async def build(tag: Tag, prefix: Path) -> None:
