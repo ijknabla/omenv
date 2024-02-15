@@ -16,6 +16,15 @@ async def main() -> None:
     build = HERE / "build" / tag
     install = HERE / tag
 
+    await _build(src, build, install, tag)
+
+
+async def _build(
+    src: Path,
+    build: Path,
+    install: Path,
+    tag: str,
+) -> None:
     os.makedirs(src.parents[0], exist_ok=True)
     git_clone = await create_subprocess_exec(
         "git",
