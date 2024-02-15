@@ -12,6 +12,8 @@ async def main() -> None:
     args = parser.parse_args()
     tag: str = args.tag
 
+    return
+
     src = HERE / "src" / tag
     build = HERE / "build" / tag
     install = HERE / tag
