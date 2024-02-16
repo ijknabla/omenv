@@ -1,0 +1,2 @@
+# omenv
+OpenModelica version management
